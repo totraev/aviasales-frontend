@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["es2017", "dom"],
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "alwaysStrict": true,
+    "module": "esnext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "files": ["src/index.tsx"],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}
