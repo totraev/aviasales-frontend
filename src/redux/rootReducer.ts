@@ -1,6 +1,14 @@
 import { combineReducers } from 'redux';
 
-// tslint:disable-next-line
-export interface IState {}
+import filterReducer, { IFilterState } from './modules/filter';
+import ticketsReducer, { ITicketsState } from './modules/tickets';
 
-export default combineReducers<{}>({});
+export interface IState {
+  filter: IFilterState;
+  tickets: ITicketsState;
+}
+
+export default combineReducers<IState>({
+  filter: filterReducer,
+  tickets: ticketsReducer,
+});

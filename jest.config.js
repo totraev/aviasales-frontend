@@ -14,12 +14,12 @@ module.exports = {
   testEnvironment: 'jsdom',
   testURL: 'http://localhost',
   transform: {
-    '^.+\\.(ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js'
+    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js'
   },
   transformIgnorePatterns: [
-    '[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$',
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
     '^.+\\.module\\.css$'
   ],
   moduleNameMapper: {
