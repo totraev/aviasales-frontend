@@ -13,10 +13,10 @@ export const SET_TICKETS = 'tickets/SET_TICKETS';
  * Types
  */
 
-interface IAction<T, P> extends Action<T> {
+export interface IAction<T, P> extends Action<T> {
   payload: P;
 }
-interface ITicket {
+export interface ITicket {
   origin: string;
   origin_name: string;
   destination: string;
@@ -30,11 +30,11 @@ interface ITicket {
   price: number;
 }
 
-type FetchTicketsAction = Action<typeof FETCH_TICKETS>;
-type StartLoadingAction = Action<typeof START_LOADING>;
-type StopLoadingAction = Action<typeof STOP_LOADING>;
-type SetTicketsAction = IAction<typeof SET_TICKETS, ITicket[]>;
-type TicketAction = StartLoadingAction | StopLoadingAction | SetTicketsAction;
+export type FetchTicketsAction = Action<typeof FETCH_TICKETS>;
+export type StartLoadingAction = Action<typeof START_LOADING>;
+export type StopLoadingAction = Action<typeof STOP_LOADING>;
+export type SetTicketsAction = IAction<typeof SET_TICKETS, ITicket[]>;
+export type TicketAction = StartLoadingAction | StopLoadingAction | SetTicketsAction;
 
 export interface ITicketsState {
   tickets: ITicket[];

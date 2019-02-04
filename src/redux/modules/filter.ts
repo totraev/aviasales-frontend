@@ -13,27 +13,27 @@ export const TOGGLE_ONLY_CURRENT_TRANSFER = 'filter/TOGGLE_ONLY_CURRENT_TRANSFER
 /**
  * Types
  */
-interface IAction<T, P> extends Action<T> {
+export interface IAction<T, P> extends Action<T> {
   payload: P;
 }
-interface ICurrencyMap {
+export interface ICurrencyMap {
   eur: number;
   rub: number;
   usd: number;
 }
-type ICurrency = keyof ICurrencyMap;
-type ITransfers = [boolean, boolean, boolean, boolean];
-interface ICheckboxPayload {
+export type ICurrency = keyof ICurrencyMap;
+export type ITransfers = [boolean, boolean, boolean, boolean];
+export interface ICheckboxPayload {
   index: number;
   value: boolean;
 }
 
-type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>;
-type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, ICurrency>;
-type ToggleAllTransfersAction = IAction<typeof TOGGLE_ALL_TRANSFERS, boolean>;
-type ToggleCurrentTransferAction = IAction<typeof TOGGLE_CURRENT_TRANSFER, ICheckboxPayload>;
-type ToggleOnlyTransferAction = IAction<typeof TOGGLE_ONLY_CURRENT_TRANSFER, ICheckboxPayload>;
-type FilterAction = SetCurrenciesAction
+export type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>;
+export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, ICurrency>;
+export type ToggleAllTransfersAction = IAction<typeof TOGGLE_ALL_TRANSFERS, boolean>;
+export type ToggleCurrentTransferAction = IAction<typeof TOGGLE_CURRENT_TRANSFER, ICheckboxPayload>;
+export type ToggleOnlyTransferAction = IAction<typeof TOGGLE_ONLY_CURRENT_TRANSFER, ICheckboxPayload>;
+export type FilterAction = SetCurrenciesAction
   | SelectCurrencyAction
   | ToggleAllTransfersAction
   | ToggleCurrentTransferAction
