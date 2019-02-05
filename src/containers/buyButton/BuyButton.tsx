@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 import { connect } from 'react-redux';
 import styles from './BuyButton.module.css';
 
-import { currencySign } from '../../helpers/currencies';
+import { currencySign, priceWithSpaces } from '../../helpers/currencies';
 
 import { IState } from '../../redux/rootReducer';
 import { IBuyButtonProps, IStateProps } from './BuyButton.types';
@@ -11,7 +11,7 @@ export const BuyButton: SFC<IBuyButtonProps> = ({ currency, currencyPrice, price
   <button className={styles.btn}>
     Купить
     <br/>
-    за {Math.round(price / currencyPrice)} ​{currencySign(currency)}
+    за {priceWithSpaces(Math.round(price / currencyPrice))} ​{currencySign(currency)}
   </button>
 );
 

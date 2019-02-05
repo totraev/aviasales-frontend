@@ -4,7 +4,7 @@ import createImmutableStateMiddleware from 'redux-immutable-state-invariant';
 import loggerMiddleware from 'redux-logger';
 import createSagaMiddleware, { END, Saga, Task } from 'redux-saga';
 
-import rootReducer, { IState } from './rootReducer';
+import rootReducer, { IState } from '../rootReducer';
 
 export interface IExt {
   runSaga?: (rootSaga: Saga) => Task;
@@ -29,8 +29,8 @@ function configureDevStore(initialState: IState): IStore {
   );
 
   if (module.hot) {
-    module.hot.accept('./rootReducer', () => {
-      const nextRootReducer = require('./rootReducer').default;
+    module.hot.accept('../rootReducer', () => {
+      const nextRootReducer = require('../rootReducer').default;
       store.replaceReducer(nextRootReducer);
     });
   }
@@ -41,23 +41,4 @@ function configureDevStore(initialState: IState): IStore {
   return store;
 }
 
-function configureProdStore(initialState: any): IStore {
-  const sagaMiddleware = createSagaMiddleware();
-
-  const store = createStore<IState, AnyAction, IExt, {}>(
-    rootReducer,
-    initialState,
-    applyMiddleware(sagaMiddleware),
-  );
-
-  store.runSaga = sagaMiddleware.run;
-  store.close = () => store.dispatch(END);
-
-  return store;
-}
-
-const configureStore = process.env.NODE === 'production'
-  ? configureProdStore
-  : configureDevStore;
-
-export default configureStore;
+export default configureDevStore;
