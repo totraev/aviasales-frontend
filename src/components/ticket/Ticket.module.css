@@ -1,0 +1,77 @@
+@import 'assets/css/_breakpoints.css';
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  min-height: 161px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
+  background-color: #fff;
+}
+
+.carrier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #eceff1;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 120px;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.info {
+  flex: 1;
+  padding: 20px;
+}
+
+.segment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time {
+  font: normal 28px/1.5 'Open Sans', sans-serif;
+  color: #4a4a4a;
+}
+
+.origin,
+.destination {
+  font: 600 12px/1.5 'Open Sans', sans-serif;
+  color: #4a4a4a;
+}
+
+.date {
+  font: 400 12px/1.5 'Open Sans', sans-serif;
+  color: #8b9497;
+}
+
+@media (--tablet) {
+  .time {
+    font-size: 36px;
+  }
+}
+
+@media (--tablet-landscape) {
+  .ticket {
+    flex-direction: row;
+  }
+
+  .carrier {
+    width: 200px;
+    border-right: 1px solid #eceff1;
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .time {
+    font-size: 32px;
+  }
+}

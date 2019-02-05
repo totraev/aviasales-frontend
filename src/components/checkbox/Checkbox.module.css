@@ -1,0 +1,92 @@
+@use postcss-inline-svg;
+
+.wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: background-color 0.2s ease-out;
+
+  & .uncheckOther {
+    font: 600 11px/3.18 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+    color: #2196f3;
+    cursor: pointer;
+    transform: translateY(30px);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      color: #ff9d1b;
+    }
+
+    &:active {
+      color: #ff761c;
+    }
+  }
+
+  &:hover {
+    background-color: #f1fcff;
+
+    & .uncheckOther {
+      transform: translateY(0);
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  font: normal 13px/2.69 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.face {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 19px;
+  width: 19px;
+  margin-right: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #d2d5d6;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    width: 9px;
+    height: 7px;
+    background: svg-load('./ok.svg') center no-repeat;
+    transform: translateY(20px);
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.faceChecked {
+  composes: face;
+  border: 1px solid #2196f3;
+
+  &::after {
+    transform: translateY(0);
+  }
+}
+
+.append {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 80px;
+}

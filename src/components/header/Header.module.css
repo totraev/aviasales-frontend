@@ -1,0 +1,19 @@
+@import 'assets/css/_breakpoints.css';
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+@media (--tablet) {
+  .header {
+    margin: 35px 0;
+  }
+}
+
+@media (--laptop) {
+  .header {
+    margin: 50px 0;
+  }
+}

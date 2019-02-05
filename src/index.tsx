@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
+import './assets/css/main.css';
+import './assets/fonts/stylesheet.css';
+
 import App from './containers/app/App';
 
 import configureStore from './redux/createStore';

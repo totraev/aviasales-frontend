@@ -1,0 +1,49 @@
+.toggle {
+  display: flex;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  flex: 1;
+  height: 40px;
+  text-align: center;
+  font: 600 12px/1.83 'Open Sans', sans-serif;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out;
+  cursor: pointer;
+
+  &:first-child {
+    border-radius: 5px 0 0 5px;
+    margin-right: -1px;
+  }
+
+  &:last-child {
+    border-radius: 0 5px 5px 0;
+    margin-left: -1px;
+  }
+}
+
+.btnDefault {
+  composes: btn;
+  color: #2196f3;
+  background-color: #fff;
+  border: 1px solid #d2d5d6;
+
+  &:hover {
+    background-color: #f3f7fa;
+    border-color: #64b5f5;
+    z-index: 1;
+  }
+}
+
+.btnActive {
+  composes: btn;
+  background-color: #2196f3;
+  color: #fff;
+  border: 1px solid #2196f3;
+  cursor: default;
+  z-index: 2;
+}

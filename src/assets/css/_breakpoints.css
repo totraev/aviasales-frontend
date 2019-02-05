@@ -1,0 +1,15 @@
+/* Smartphones */
+@custom-media --smartphone only screen and (width >= 300px);
+@custom-media --smartphone-portrait only screen and (width >= 300px);
+@custom-media --smartphone-landscape only screen and (width >= 480px);
+
+/* Tablets */
+@custom-media --tablet only screen and (width >= 768px);
+@custom-media --tablet-portrait only screen and (width >= 768px);
+@custom-media --tablet-landscape only screen and (width >= 1024px);
+
+/* Desctop */
+@custom-media --laptop only screen and (width >= 1228px);
+
+/* Large screen */
+@custom-media --desktop only screen and (width >= 1440px);

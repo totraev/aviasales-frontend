@@ -26,13 +26,13 @@ module.exports = function(webpackEnv) {
   const createStyleLoaders = (options) => {
     return [
       isProduction ? MiniCssExtractPlugin.loader : require.resolve('style-loader'),
-      require.resolve('css-modules-typescript-loader'),
+      options.modules && require.resolve('css-modules-typescript-loader'),
       {
         loader: require.resolve('css-loader'),
         options
       },
       require.resolve('postcss-loader')
-    ];
+    ].filter(Boolean);
   }
 
   return {

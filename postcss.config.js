@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     'stylelint': {},
-    'postcss-import': { path: ['src/assets/css'] },
+    'postcss-import': { path: ['src'] },
     'autoprefixer': {},
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': { stage: 0 },
@@ -12,7 +12,6 @@ module.exports = {
         'postcss-utilities',
         'postcss-inline-svg'
       ]
-    },
-    'postcss-reporter': { clearAllMessages: true },
+    }
   }
 }

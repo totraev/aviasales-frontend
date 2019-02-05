@@ -1,3 +1,60 @@
-.app {
-  color: red;
+@import 'assets/css/_breakpoints.css';
+
+.container {
+  width: 100%;
+  min-width: 320px;
+  padding: 0 10px;
+}
+
+.contentWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  display: block;
+  margin-bottom: 35px;
+}
+
+.content {
+  display: block;
+}
+
+@media (--tablet) {
+  .container {
+    width: 740px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .contentWrap {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 232px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .content {
+    flex: 1;
+  }
+}
+
+@media (--tablet-landscape) {
+  .container {
+    width: 820px;
+  }
+}
+
+@media (--desktop) {
+  .sidebar {
+    width: 280px;
+    margin-right: 30px;
+  }
+
+  .container {
+    width: 1024px;
+  }
 }
