@@ -1,13 +1,7 @@
 import { combineReducers } from 'redux'
 
-import filterReducer, {
-  IFilterState,
-  initialState as filter,
-} from './modules/filter'
-import ticketsReducer, {
-  initialState as tickets,
-  ITicketsState,
-} from './modules/tickets'
+import filterReducer, { IFilterState, initialState as filter } from './modules/filter'
+import ticketsReducer, { initialState as tickets, ITicketsState } from './modules/tickets'
 
 export interface IState {
   filter: IFilterState

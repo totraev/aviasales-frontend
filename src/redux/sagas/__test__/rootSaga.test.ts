@@ -32,9 +32,7 @@ describe('Root saga', () => {
     expect(gen.next().value).toEqual(
       all([call(fetchJson, '/currency.json'), call(fetchJson, '/tickets.json')])
     )
-    expect(gen.next(res).value).toEqual(
-      put(setCurrencies({ eur: 1, rub: 1, usd: 1 }))
-    )
+    expect(gen.next(res).value).toEqual(put(setCurrencies({ eur: 1, rub: 1, usd: 1 })))
     expect(gen.next().value).toEqual(put(setTickets(tickets)))
     expect(gen.next().value).toEqual(put(stopLoading()))
   })

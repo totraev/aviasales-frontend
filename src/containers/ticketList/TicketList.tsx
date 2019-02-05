@@ -16,15 +16,10 @@ const TicketList: SFC<ITicketListProps> = ({ loading, tickets }) => (
 
     {!loading &&
       tickets.map(ticket => (
-        <Ticket
-          key={`${ticket.carrier}-${ticket.stops}-${ticket.price}`}
-          ticket={ticket}
-        />
+        <Ticket key={`${ticket.carrier}-${ticket.stops}-${ticket.price}`} ticket={ticket} />
       ))}
 
-    {!loading && tickets.length === 0 && (
-      <div className={styles.empty}>НЕТ ПОДХОДЯЩИХ БИЛЕТОВ</div>
-    )}
+    {!loading && tickets.length === 0 && <div className={styles.empty}>НЕТ ПОДХОДЯЩИХ БИЛЕТОВ</div>}
   </div>
 )
 

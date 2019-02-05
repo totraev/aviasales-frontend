@@ -3,13 +3,7 @@ import { all, call, fork, put, takeEvery } from 'redux-saga/effects'
 import fetchJson from '../../api/fetchJson'
 
 import { ICurrencyMap, setCurrencies } from '../modules/filter'
-import {
-  FETCH_TICKETS,
-  ITicket,
-  setTickets,
-  startLoading,
-  stopLoading,
-} from '../modules/tickets'
+import { FETCH_TICKETS, ITicket, setTickets, startLoading, stopLoading } from '../modules/tickets'
 
 export type Response = [ICurrencyMap, { tickets: ITicket[] }]
 

@@ -16,26 +16,11 @@ import {
 
 import { selectCurrency } from '../../redux/modules/filter'
 
-export const CurrencyToggle: SFC<IInnerProps> = ({
-  handleBtnClassName,
-  handleClick,
-}) => (
+export const CurrencyToggle: SFC<IInnerProps> = ({ handleBtnClassName, handleClick }) => (
   <div className={styles.toggle}>
-    <button
-      className={handleBtnClassName('rub')}
-      onClick={handleClick('rub')}
-      children="RUB"
-    />
-    <button
-      className={handleBtnClassName('usd')}
-      onClick={handleClick('usd')}
-      children="USD"
-    />
-    <button
-      className={handleBtnClassName('eur')}
-      onClick={handleClick('eur')}
-      children="EUR"
-    />
+    <button className={handleBtnClassName('rub')} onClick={handleClick('rub')} children="RUB" />
+    <button className={handleBtnClassName('usd')} onClick={handleClick('usd')} children="USD" />
+    <button className={handleBtnClassName('eur')} onClick={handleClick('eur')} children="EUR" />
   </div>
 )
 
@@ -50,7 +35,6 @@ export default compose<IInnerProps, {}>(
         [styles.btnActive]: activeCurr === curr,
         [styles.btnDefault]: activeCurr !== curr,
       }),
-    handleClick: ({ selectCurrency: changeCurrency }) => currency => () =>
-      changeCurrency(currency),
+    handleClick: ({ selectCurrency: changeCurrency }) => currency => () => changeCurrency(currency),
   })
 )(CurrencyToggle)

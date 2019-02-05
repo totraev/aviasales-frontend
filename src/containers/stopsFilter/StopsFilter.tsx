@@ -58,10 +58,7 @@ export default compose<IInnerProps, {}>(
     }
   ),
   withHandlers<IStopsFilterProps, IHandlers>({
-    handleChange: ({
-      stopsList,
-      toggleCurrentCheckbox: toggle,
-    }) => stops => () => {
+    handleChange: ({ stopsList, toggleCurrentCheckbox: toggle }) => stops => () => {
       toggle(stops, !stopsList[stops])
     },
     handleChangeAll: ({ stopsList, toggleAllCheckboxes: toggle }) => () => {
@@ -69,9 +66,7 @@ export default compose<IInnerProps, {}>(
 
       toggle(!value)
     },
-    handleUncheckOther: ({
-      toggleOnlyCurrentCheckbox: toggle,
-    }) => stops => () => {
+    handleUncheckOther: ({ toggleOnlyCurrentCheckbox: toggle }) => stops => () => {
       toggle(stops, true)
     },
   })

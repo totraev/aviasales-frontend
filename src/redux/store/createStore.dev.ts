@@ -20,11 +20,7 @@ function configureDevStore(initialState: IState): IStore {
     rootReducer,
     initialState,
     composeWithDevTools(
-      applyMiddleware(
-        sagaMiddleware,
-        loggerMiddleware,
-        createImmutableStateMiddleware()
-      )
+      applyMiddleware(sagaMiddleware, loggerMiddleware, createImmutableStateMiddleware())
     )
   )
 

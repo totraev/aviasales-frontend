@@ -1,9 +1,4 @@
-import ticketsReducer, {
-  initialState,
-  setTickets,
-  startLoading,
-  stopLoading,
-} from '../tickets'
+import ticketsReducer, { initialState, setTickets, startLoading, stopLoading } from '../tickets'
 
 describe('Filter reducer', () => {
   it('Should return initial state', () => {

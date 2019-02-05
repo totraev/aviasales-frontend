@@ -8,8 +8,7 @@ export const SET_CURRENCIES = 'filter/SET_CURRENCIES'
 export const SELECT_CURRENCY = 'filter/SELECT_CURRENCY'
 export const TOGGLE_ALL_TRANSFERS = 'filter/TOGGLE_ALL_TRANSFERS'
 export const TOGGLE_CURRENT_TRANSFER = 'filter/TOGGLE_CURRENT_TRANSFER'
-export const TOGGLE_ONLY_CURRENT_TRANSFER =
-  'filter/TOGGLE_ONLY_CURRENT_TRANSFER'
+export const TOGGLE_ONLY_CURRENT_TRANSFER = 'filter/TOGGLE_ONLY_CURRENT_TRANSFER'
 
 /**
  * Types
@@ -31,14 +30,8 @@ export interface ICheckboxPayload {
 
 export type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>
 export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, Currency>
-export type ToggleAllTransfersAction = IAction<
-  typeof TOGGLE_ALL_TRANSFERS,
-  boolean
->
-export type ToggleCurrentTransferAction = IAction<
-  typeof TOGGLE_CURRENT_TRANSFER,
-  ICheckboxPayload
->
+export type ToggleAllTransfersAction = IAction<typeof TOGGLE_ALL_TRANSFERS, boolean>
+export type ToggleCurrentTransferAction = IAction<typeof TOGGLE_CURRENT_TRANSFER, ICheckboxPayload>
 export type ToggleOnlyTransferAction = IAction<
   typeof TOGGLE_ONLY_CURRENT_TRANSFER,
   ICheckboxPayload
@@ -73,19 +66,14 @@ export function selectCurrency(payload: Currency): SelectCurrencyAction {
   }
 }
 
-export function toggleAllCheckboxes(
-  payload: boolean
-): ToggleAllTransfersAction {
+export function toggleAllCheckboxes(payload: boolean): ToggleAllTransfersAction {
   return {
     payload,
     type: TOGGLE_ALL_TRANSFERS,
   }
 }
 
-export function toggleCurrentCheckbox(
-  stops: number,
-  value: boolean
-): ToggleCurrentTransferAction {
+export function toggleCurrentCheckbox(stops: number, value: boolean): ToggleCurrentTransferAction {
   return {
     payload: {
       index: stops,
@@ -95,10 +83,7 @@ export function toggleCurrentCheckbox(
   }
 }
 
-export function toggleOnlyCurrentCheckbox(
-  stops: number,
-  value: boolean
-): ToggleOnlyTransferAction {
+export function toggleOnlyCurrentCheckbox(stops: number, value: boolean): ToggleOnlyTransferAction {
   return {
     payload: {
       index: stops,

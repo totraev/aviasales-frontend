@@ -6,13 +6,7 @@ import classNames from 'classnames'
 import { stopsMessage } from '../../helpers/stops'
 import { ICheckboxProps } from './Checkbox.types'
 
-const Checkbox: SFC<ICheckboxProps> = ({
-  id,
-  stops,
-  value,
-  onChange,
-  onUncheckOther,
-}) => (
+const Checkbox: SFC<ICheckboxProps> = ({ id, stops, value, onChange, onUncheckOther }) => (
   <div className={styles.wrap}>
     <label className={styles.label} htmlFor={id}>
       <input

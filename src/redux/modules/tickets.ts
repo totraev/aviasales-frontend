@@ -34,10 +34,7 @@ export type FetchTicketsAction = Action<typeof FETCH_TICKETS>
 export type StartLoadingAction = Action<typeof START_LOADING>
 export type StopLoadingAction = Action<typeof STOP_LOADING>
 export type SetTicketsAction = IAction<typeof SET_TICKETS, ITicket[]>
-export type TicketAction =
-  | StartLoadingAction
-  | StopLoadingAction
-  | SetTicketsAction
+export type TicketAction = StartLoadingAction | StopLoadingAction | SetTicketsAction
 
 export interface ITicketsState {
   tickets: ITicket[]
@@ -91,10 +88,7 @@ export default createReducer<ITicketsState, TicketAction>(initialState, {
     loading: false,
   }),
 
-  [SET_TICKETS]: (
-    state: ITicketsState,
-    { payload: tickets }: SetTicketsAction
-  ): ITicketsState => ({
+  [SET_TICKETS]: (state: ITicketsState, { payload: tickets }: SetTicketsAction): ITicketsState => ({
     ...state,
     tickets,
   }),

@@ -50,14 +50,8 @@ describe('Filter reducer', () => {
   })
 
   it('Should check only current checkbox', () => {
-    const firstState = filterReducer(
-      initialState,
-      toggleCurrentCheckbox(1, true)
-    )
-    const secondState = filterReducer(
-      firstState,
-      toggleCurrentCheckbox(2, true)
-    )
+    const firstState = filterReducer(initialState, toggleCurrentCheckbox(1, true))
+    const secondState = filterReducer(firstState, toggleCurrentCheckbox(2, true))
     const state = filterReducer(secondState, toggleOnlyCurrentCheckbox(0, true))
 
     expect(state.transfers).toEqual([true, false, false, false])
