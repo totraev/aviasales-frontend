@@ -1,4 +1,4 @@
-@import "assets/css/_breakpoints.css";
+@import 'assets/css/_breakpoints.css';
 
 @use postcss-inline-svg;
 
@@ -7,7 +7,7 @@
 }
 
 .stops {
-  font: 600 10px/1.21 "Open Sans", sans-serif;
+  font: 600 10px/1.21 'Open Sans', sans-serif;
   text-align: center;
   color: #8b9497;
 }
@@ -32,7 +32,7 @@
   display: block;
   height: 13px;
   width: 13px;
-  background: svg-load("./svg/airplane.svg") center no-repeat;
+  background: svg-load('./svg/airplane.svg') center no-repeat;
 }
 
 @media (--smartphone-landscape) {

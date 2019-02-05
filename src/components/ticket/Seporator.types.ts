@@ -1,3 +1,3 @@
 export interface ISeporatorProps {
-  stops: number;
+  stops: number
 }

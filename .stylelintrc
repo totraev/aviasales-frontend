@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
+  "extends": ["stylelint-config-standard", "stylelint-config-css-modules", "stylelint-config-prettier"],
   "ignoreFiles": ["node_modules/*", "build/*"],
   "defaultSeverity": "error",
   "rules": {

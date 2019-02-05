@@ -1,21 +1,21 @@
-import { MouseEventHandler } from "react";
-import { selectCurrency } from "../../redux/modules/filter";
+import { MouseEventHandler } from 'react'
+import { selectCurrency } from '../../redux/modules/filter'
 
-export type Currency = "eur" | "rub" | "usd";
+export type Currency = 'eur' | 'rub' | 'usd'
 
 export interface IStateProps {
-  currency: Currency;
+  currency: Currency
 }
 
 export interface IDispatchProps {
-  selectCurrency: typeof selectCurrency;
+  selectCurrency: typeof selectCurrency
 }
 
 export interface ICurrencyToggleProps extends IStateProps, IDispatchProps {}
 
 export interface IHandlers {
-  handleBtnClassName: (currency: Currency) => string;
-  handleClick: (currency: Currency) => MouseEventHandler<HTMLButtonElement>;
+  handleBtnClassName: (currency: Currency) => string
+  handleClick: (currency: Currency) => MouseEventHandler<HTMLButtonElement>
 }
 
 export interface IInnerProps extends ICurrencyToggleProps, IHandlers {}

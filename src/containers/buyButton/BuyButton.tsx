@@ -1,16 +1,16 @@
-import React, { SFC } from "react";
-import { connect } from "react-redux";
-import styles from "./BuyButton.module.css";
+import React, { SFC } from 'react'
+import { connect } from 'react-redux'
+import styles from './BuyButton.module.css'
 
-import { priceWithSpaces } from "../../helpers/currencies";
+import { priceWithSpaces } from '../../helpers/currencies'
 
-import { IState } from "../../redux/rootReducer";
-import { IBuyButtonProps, IStateProps } from "./BuyButton.types";
+import { IState } from '../../redux/rootReducer'
+import { IBuyButtonProps, IStateProps } from './BuyButton.types'
 
 export const BuyButton: SFC<IBuyButtonProps> = ({
   currency,
   currencyPrice,
-  price
+  price,
 }) => (
   <button className={styles.btn}>
     Купить
@@ -20,11 +20,11 @@ export const BuyButton: SFC<IBuyButtonProps> = ({
       {priceWithSpaces(Math.round(price / currencyPrice))}
     </span>
   </button>
-);
+)
 
 export default connect<IStateProps, {}, {}, IState>(
   ({ filter: { currentCurr, currencyMap } }) => ({
     currency: currentCurr,
-    currencyPrice: currencyMap[currentCurr]
+    currencyPrice: currencyMap[currentCurr],
   })
-)(BuyButton);
+)(BuyButton)

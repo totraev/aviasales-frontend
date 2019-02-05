@@ -1,12 +1,12 @@
-import React, { SFC } from "react";
-import styles from "./Ticket.module.css";
+import React, { SFC } from 'react'
+import styles from './Ticket.module.css'
 
-import BuyButton from "../../containers/buyButton/BuyButton";
-import Seporator from "./Seporator";
+import BuyButton from '../../containers/buyButton/BuyButton'
+import Seporator from './Seporator'
 
-import { formatDate } from "../../helpers/date";
+import { formatDate } from '../../helpers/date'
 
-import { ITicketProps } from "./Ticket.types";
+import { ITicketProps } from './Ticket.types'
 
 const Ticket: SFC<ITicketProps> = ({ ticket }) => (
   <div className={styles.ticket}>
@@ -14,11 +14,11 @@ const Ticket: SFC<ITicketProps> = ({ ticket }) => (
       <img
         className={styles.logo}
         srcSet={`
-          ${require("./images/logo.png")},
-          ${require("./images/logo@2x.png")} 2x,
-          ${require("./images/logo@3x.png")}
+          ${require('./images/logo.png')},
+          ${require('./images/logo@2x.png')} 2x,
+          ${require('./images/logo@3x.png')}
         `}
-        src={require("./images/logo@3x.png")}
+        src={require('./images/logo@3x.png')}
         alt="TK"
       />
 
@@ -47,6 +47,6 @@ const Ticket: SFC<ITicketProps> = ({ ticket }) => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Ticket;
+export default Ticket

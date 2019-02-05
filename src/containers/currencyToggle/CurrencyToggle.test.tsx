@@ -1,11 +1,11 @@
-import React from "react";
-import renderer from "react-test-renderer";
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import { CurrencyToggle } from "./CurrencyToggle";
+import { CurrencyToggle } from './CurrencyToggle'
 
-describe("CurrencyToggle component", () => {
-  it("Should renders correctly", () => {
-    const mockFunc: any = () => null;
+describe('CurrencyToggle component', () => {
+  it('Should renders correctly', () => {
+    const mockFunc: any = () => null
     const tree = renderer
       .create(
         <CurrencyToggle
@@ -15,8 +15,8 @@ describe("CurrencyToggle component", () => {
           handleClick={mockFunc}
         />
       )
-      .toJSON();
+      .toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
-});
+    expect(tree).toMatchSnapshot()
+  })
+})

@@ -1,12 +1,12 @@
-import React from "react";
-import { createRenderer } from "react-test-renderer/shallow";
+import React from 'react'
+import { createRenderer } from 'react-test-renderer/shallow'
 
-import { StopsFilter } from "./StopsFilter";
+import { StopsFilter } from './StopsFilter'
 
-describe("StopsFilter component", () => {
-  it("Should renders correctly", () => {
-    const renderer = createRenderer();
-    const mockFunc: any = () => null;
+describe('StopsFilter component', () => {
+  it('Should renders correctly', () => {
+    const renderer = createRenderer()
+    const mockFunc: any = () => null
 
     const tree = renderer.render(
       <StopsFilter
@@ -18,8 +18,8 @@ describe("StopsFilter component", () => {
         toggleCurrentCheckbox={null}
         toggleOnlyCurrentCheckbox={null}
       />
-    );
+    )
 
-    expect(tree).toMatchSnapshot();
-  });
-});
+    expect(tree).toMatchSnapshot()
+  })
+})

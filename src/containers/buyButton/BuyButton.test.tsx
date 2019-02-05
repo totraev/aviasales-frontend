@@ -1,14 +1,14 @@
-import React from "react";
-import renderer from "react-test-renderer";
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import { BuyButton } from "./BuyButton";
+import { BuyButton } from './BuyButton'
 
-describe("BuyButton component", () => {
-  it("Should renders correctly", () => {
+describe('BuyButton component', () => {
+  it('Should renders correctly', () => {
     const tree = renderer
       .create(<BuyButton currency="rub" currencyPrice={1} price={500} />)
-      .toJSON();
+      .toJSON()
 
-    expect(tree).toMatchSnapshot();
-  });
-});
+    expect(tree).toMatchSnapshot()
+  })
+})

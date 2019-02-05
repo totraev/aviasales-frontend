@@ -7,7 +7,7 @@
   transition: background-color 0.2s ease-out;
 
   & .uncheckOther {
-    font: 600 11px/3.18 "Open Sans", sans-serif;
+    font: 600 11px/3.18 'Open Sans', sans-serif;
     letter-spacing: 0.5px;
     color: #2196f3;
     cursor: pointer;
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   padding: 0 15px;
-  font: normal 13px/2.69 "Open Sans", sans-serif;
+  font: normal 13px/2.69 'Open Sans', sans-serif;
   color: #4a4a4a;
   cursor: pointer;
 }
@@ -57,14 +57,14 @@
   border: 1px solid #d2d5d6;
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 5px;
     left: 4px;
     width: 9px;
     height: 7px;
-    background: svg-load("./svg/ok.svg") center no-repeat;
+    background: svg-load('./svg/ok.svg') center no-repeat;
     transform: translateY(20px);
     transition: transform 0.2s ease-in-out;
   }

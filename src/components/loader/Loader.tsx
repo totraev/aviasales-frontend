@@ -1,5 +1,5 @@
-import React, { SFC } from "react";
-import styles from "./Loader.module.css";
+import React, { SFC } from 'react'
+import styles from './Loader.module.css'
 
 const Loader: SFC = () => (
   <div className={styles.loader}>
@@ -11,6 +11,6 @@ const Loader: SFC = () => (
       <span className={styles.line5} />
     </div>
   </div>
-);
+)
 
-export default Loader;
+export default Loader

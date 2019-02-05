@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import styles from "./App.module.css";
+import React, { Component } from 'react'
+import styles from './App.module.css'
 
-import { hot } from "react-hot-loader";
-import { connect } from "react-redux";
-import { compose } from "recompose";
+import { hot } from 'react-hot-loader'
+import { connect } from 'react-redux'
+import { compose } from 'recompose'
 
-import Filter from "../../components/filter/Filter";
-import Header from "../../components/header/Header";
-import TicketList from "../ticketList/TicketList";
+import Filter from '../../components/filter/Filter'
+import Header from '../../components/header/Header'
+import TicketList from '../ticketList/TicketList'
 
-import { fetchTickets } from "../../redux/modules/tickets";
-import { IDispatchProps, IProps } from "./App.types";
+import { fetchTickets } from '../../redux/modules/tickets'
+import { IDispatchProps, IProps } from './App.types'
 
 export class App extends Component<IProps> {
   public componentDidMount() {
-    this.props.fetchTickets();
+    this.props.fetchTickets()
   }
 
   public render() {
@@ -32,7 +32,7 @@ export class App extends Component<IProps> {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -42,4 +42,4 @@ export default compose<IDispatchProps, {}>(
     null,
     { fetchTickets }
   )
-)(App);
+)(App)

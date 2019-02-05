@@ -1,31 +1,31 @@
-import React, { SFC } from "react";
-import { connect } from "react-redux";
-import styles from "./StopsFilter.module.css";
+import React, { SFC } from 'react'
+import { connect } from 'react-redux'
+import styles from './StopsFilter.module.css'
 
-import { compose, withHandlers } from "recompose";
+import { compose, withHandlers } from 'recompose'
 
-import Checkbox from "../../components/checkbox/Checkbox";
+import Checkbox from '../../components/checkbox/Checkbox'
 
 import {
   toggleAllCheckboxes,
   toggleCurrentCheckbox,
-  toggleOnlyCurrentCheckbox
-} from "../../redux/modules/filter";
+  toggleOnlyCurrentCheckbox,
+} from '../../redux/modules/filter'
 
-import { IState } from "../../redux/rootReducer";
+import { IState } from '../../redux/rootReducer'
 import {
   IDispatchProps,
   IHandlers,
   IInnerProps,
   IStateProps,
-  IStopsFilterProps
-} from "./StopsFilter.types";
+  IStopsFilterProps,
+} from './StopsFilter.types'
 
 export const StopsFilter: SFC<IInnerProps> = ({
   stopsList,
   handleChange,
   handleUncheckOther,
-  handleChangeAll
+  handleChangeAll,
 }) => (
   <div className={styles.stops}>
     <Checkbox
@@ -46,7 +46,7 @@ export const StopsFilter: SFC<IInnerProps> = ({
       />
     ))}
   </div>
-);
+)
 
 export default compose<IInnerProps, {}>(
   connect<IStateProps, IDispatchProps, {}, IState>(
@@ -54,25 +54,25 @@ export default compose<IInnerProps, {}>(
     {
       toggleAllCheckboxes,
       toggleCurrentCheckbox,
-      toggleOnlyCurrentCheckbox
+      toggleOnlyCurrentCheckbox,
     }
   ),
   withHandlers<IStopsFilterProps, IHandlers>({
     handleChange: ({
       stopsList,
-      toggleCurrentCheckbox: toggle
+      toggleCurrentCheckbox: toggle,
     }) => stops => () => {
-      toggle(stops, !stopsList[stops]);
+      toggle(stops, !stopsList[stops])
     },
     handleChangeAll: ({ stopsList, toggleAllCheckboxes: toggle }) => () => {
-      const value = stopsList.every(v => v);
+      const value = stopsList.every(v => v)
 
-      toggle(!value);
+      toggle(!value)
     },
     handleUncheckOther: ({
-      toggleOnlyCurrentCheckbox: toggle
+      toggleOnlyCurrentCheckbox: toggle,
     }) => stops => () => {
-      toggle(stops, true);
-    }
+      toggle(stops, true)
+    },
   })
-)(StopsFilter);
+)(StopsFilter)

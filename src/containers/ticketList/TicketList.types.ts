@@ -1,8 +1,8 @@
-import { ITicket } from "../../redux/modules/tickets";
+import { ITicket } from '../../redux/modules/tickets'
 
 export interface IStateProps {
-  loading: boolean;
-  tickets: ITicket[];
+  loading: boolean
+  tickets: ITicket[]
 }
 
-export type ITicketListProps = IStateProps;
+export type ITicketListProps = IStateProps

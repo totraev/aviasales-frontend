@@ -1,9 +1,9 @@
-import React, { SFC } from "react";
-import styles from "./Seporator.module.css";
+import React, { SFC } from 'react'
+import styles from './Seporator.module.css'
 
-import { stopsMessage } from "../../helpers/stops";
+import { stopsMessage } from '../../helpers/stops'
 
-import { ISeporatorProps } from "./Seporator.types";
+import { ISeporatorProps } from './Seporator.types'
 
 const Seporator: SFC<ISeporatorProps> = ({ stops }) => (
   <div className={styles.seporator}>
@@ -14,6 +14,6 @@ const Seporator: SFC<ISeporatorProps> = ({ stops }) => (
       <span className={styles.airplane} />
     </div>
   </div>
-);
+)
 
-export default Seporator;
+export default Seporator

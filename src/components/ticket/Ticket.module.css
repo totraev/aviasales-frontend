@@ -1,4 +1,4 @@
-@import "assets/css/_breakpoints.css";
+@import 'assets/css/_breakpoints.css';
 
 .ticket {
   display: flex;
@@ -38,18 +38,18 @@
 }
 
 .time {
-  font: normal 28px/1.5 "Open Sans", sans-serif;
+  font: normal 28px/1.5 'Open Sans', sans-serif;
   color: #4a4a4a;
 }
 
 .origin,
 .destination {
-  font: 600 12px/1.5 "Open Sans", sans-serif;
+  font: 600 12px/1.5 'Open Sans', sans-serif;
   color: #4a4a4a;
 }
 
 .date {
-  font: 400 12px/1.5 "Open Sans", sans-serif;
+  font: 400 12px/1.5 'Open Sans', sans-serif;
   color: #8b9497;
 }
 

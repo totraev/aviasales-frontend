@@ -1,59 +1,59 @@
-import { Action } from "redux";
-import { createReducer } from "redux-create-reducer";
+import { Action } from 'redux'
+import { createReducer } from 'redux-create-reducer'
 
 /**
  * Constants
  */
-export const SET_CURRENCIES = "filter/SET_CURRENCIES";
-export const SELECT_CURRENCY = "filter/SELECT_CURRENCY";
-export const TOGGLE_ALL_TRANSFERS = "filter/TOGGLE_ALL_TRANSFERS";
-export const TOGGLE_CURRENT_TRANSFER = "filter/TOGGLE_CURRENT_TRANSFER";
+export const SET_CURRENCIES = 'filter/SET_CURRENCIES'
+export const SELECT_CURRENCY = 'filter/SELECT_CURRENCY'
+export const TOGGLE_ALL_TRANSFERS = 'filter/TOGGLE_ALL_TRANSFERS'
+export const TOGGLE_CURRENT_TRANSFER = 'filter/TOGGLE_CURRENT_TRANSFER'
 export const TOGGLE_ONLY_CURRENT_TRANSFER =
-  "filter/TOGGLE_ONLY_CURRENT_TRANSFER";
+  'filter/TOGGLE_ONLY_CURRENT_TRANSFER'
 
 /**
  * Types
  */
 export interface IAction<T, P> extends Action<T> {
-  payload: P;
+  payload: P
 }
 export interface ICurrencyMap {
-  eur: number;
-  rub: number;
-  usd: number;
+  eur: number
+  rub: number
+  usd: number
 }
-export type Currency = keyof ICurrencyMap;
-export type ITransfers = [boolean, boolean, boolean, boolean];
+export type Currency = keyof ICurrencyMap
+export type ITransfers = [boolean, boolean, boolean, boolean]
 export interface ICheckboxPayload {
-  index: number;
-  value: boolean;
+  index: number
+  value: boolean
 }
 
-export type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>;
-export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, Currency>;
+export type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>
+export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, Currency>
 export type ToggleAllTransfersAction = IAction<
   typeof TOGGLE_ALL_TRANSFERS,
   boolean
->;
+>
 export type ToggleCurrentTransferAction = IAction<
   typeof TOGGLE_CURRENT_TRANSFER,
   ICheckboxPayload
->;
+>
 export type ToggleOnlyTransferAction = IAction<
   typeof TOGGLE_ONLY_CURRENT_TRANSFER,
   ICheckboxPayload
->;
+>
 export type FilterAction =
   | SetCurrenciesAction
   | SelectCurrencyAction
   | ToggleAllTransfersAction
   | ToggleCurrentTransferAction
-  | ToggleOnlyTransferAction;
+  | ToggleOnlyTransferAction
 
 export interface IFilterState {
-  currencyMap: ICurrencyMap;
-  currentCurr: Currency;
-  transfers: ITransfers;
+  currencyMap: ICurrencyMap
+  currentCurr: Currency
+  transfers: ITransfers
 }
 
 /**
@@ -62,15 +62,15 @@ export interface IFilterState {
 export function setCurrencies(payload: ICurrencyMap): SetCurrenciesAction {
   return {
     payload,
-    type: SET_CURRENCIES
-  };
+    type: SET_CURRENCIES,
+  }
 }
 
 export function selectCurrency(payload: Currency): SelectCurrencyAction {
   return {
     payload,
-    type: SELECT_CURRENCY
-  };
+    type: SELECT_CURRENCY,
+  }
 }
 
 export function toggleAllCheckboxes(
@@ -78,8 +78,8 @@ export function toggleAllCheckboxes(
 ): ToggleAllTransfersAction {
   return {
     payload,
-    type: TOGGLE_ALL_TRANSFERS
-  };
+    type: TOGGLE_ALL_TRANSFERS,
+  }
 }
 
 export function toggleCurrentCheckbox(
@@ -89,10 +89,10 @@ export function toggleCurrentCheckbox(
   return {
     payload: {
       index: stops,
-      value
+      value,
     },
-    type: TOGGLE_CURRENT_TRANSFER
-  };
+    type: TOGGLE_CURRENT_TRANSFER,
+  }
 }
 
 export function toggleOnlyCurrentCheckbox(
@@ -102,10 +102,10 @@ export function toggleOnlyCurrentCheckbox(
   return {
     payload: {
       index: stops,
-      value
+      value,
     },
-    type: TOGGLE_ONLY_CURRENT_TRANSFER
-  };
+    type: TOGGLE_ONLY_CURRENT_TRANSFER,
+  }
 }
 
 /**
@@ -115,11 +115,11 @@ export const initialState: IFilterState = {
   currencyMap: {
     eur: 1,
     rub: 1,
-    usd: 1
+    usd: 1,
   },
-  currentCurr: "rub",
-  transfers: [true, true, true, true]
-};
+  currentCurr: 'rub',
+  transfers: [true, true, true, true],
+}
 
 export default createReducer<IFilterState, FilterAction>(initialState, {
   [SET_CURRENCIES]: (
@@ -127,7 +127,7 @@ export default createReducer<IFilterState, FilterAction>(initialState, {
     { payload: currencyMap }: SetCurrenciesAction
   ): IFilterState => ({
     ...state,
-    currencyMap
+    currencyMap,
   }),
 
   [SELECT_CURRENCY]: (
@@ -135,7 +135,7 @@ export default createReducer<IFilterState, FilterAction>(initialState, {
     { payload: currentCurr }: SelectCurrencyAction
   ): IFilterState => ({
     ...state,
-    currentCurr
+    currentCurr,
   }),
 
   [TOGGLE_ALL_TRANSFERS]: (
@@ -143,7 +143,7 @@ export default createReducer<IFilterState, FilterAction>(initialState, {
     { payload }: ToggleAllTransfersAction
   ): IFilterState => ({
     ...state,
-    transfers: state.transfers.map(() => payload) as ITransfers
+    transfers: state.transfers.map(() => payload) as ITransfers,
   }),
 
   [TOGGLE_CURRENT_TRANSFER]: (
@@ -153,7 +153,7 @@ export default createReducer<IFilterState, FilterAction>(initialState, {
     ...state,
     transfers: state.transfers.map((v, i) =>
       i === payload.index ? payload.value : v
-    ) as ITransfers
+    ) as ITransfers,
   }),
 
   [TOGGLE_ONLY_CURRENT_TRANSFER]: (
@@ -163,6 +163,6 @@ export default createReducer<IFilterState, FilterAction>(initialState, {
     ...state,
     transfers: state.transfers.map((_, i) =>
       i === payload.index ? payload.value : false
-    ) as ITransfers
-  })
-});
+    ) as ITransfers,
+  }),
+})

@@ -1,43 +1,43 @@
-import React, { SFC } from "react";
-import { connect } from "react-redux";
-import styles from "./CurrencyToggle.module.css";
+import React, { SFC } from 'react'
+import { connect } from 'react-redux'
+import styles from './CurrencyToggle.module.css'
 
-import classNames from "classnames";
-import { compose, withHandlers } from "recompose";
+import classNames from 'classnames'
+import { compose, withHandlers } from 'recompose'
 
-import { IState } from "../../redux/rootReducer";
+import { IState } from '../../redux/rootReducer'
 import {
   ICurrencyToggleProps,
   IDispatchProps,
   IHandlers,
   IInnerProps,
-  IStateProps
-} from "./CurrencyToggle.types";
+  IStateProps,
+} from './CurrencyToggle.types'
 
-import { selectCurrency } from "../../redux/modules/filter";
+import { selectCurrency } from '../../redux/modules/filter'
 
 export const CurrencyToggle: SFC<IInnerProps> = ({
   handleBtnClassName,
-  handleClick
+  handleClick,
 }) => (
   <div className={styles.toggle}>
     <button
-      className={handleBtnClassName("rub")}
-      onClick={handleClick("rub")}
+      className={handleBtnClassName('rub')}
+      onClick={handleClick('rub')}
       children="RUB"
     />
     <button
-      className={handleBtnClassName("usd")}
-      onClick={handleClick("usd")}
+      className={handleBtnClassName('usd')}
+      onClick={handleClick('usd')}
       children="USD"
     />
     <button
-      className={handleBtnClassName("eur")}
-      onClick={handleClick("eur")}
+      className={handleBtnClassName('eur')}
+      onClick={handleClick('eur')}
       children="EUR"
     />
   </div>
-);
+)
 
 export default compose<IInnerProps, {}>(
   connect<IStateProps, IDispatchProps, {}, IState>(
@@ -48,9 +48,9 @@ export default compose<IInnerProps, {}>(
     handleBtnClassName: ({ currency: activeCurr }) => curr =>
       classNames({
         [styles.btnActive]: activeCurr === curr,
-        [styles.btnDefault]: activeCurr !== curr
+        [styles.btnDefault]: activeCurr !== curr,
       }),
     handleClick: ({ selectCurrency: changeCurrency }) => currency => () =>
-      changeCurrency(currency)
+      changeCurrency(currency),
   })
-)(CurrencyToggle);
+)(CurrencyToggle)
