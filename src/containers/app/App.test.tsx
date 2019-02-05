@@ -1,12 +1,17 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 import { App } from './App';
 
 describe('App component', () => {
   it('Should renders correctly', () => {
+    const renderer = createRenderer();
     const fetchTickets = () => null;
-    const tree = renderer.create(<App fetchTickets={fetchTickets}/>).toJSON();
+
+    const tree = renderer.render(
+      <App fetchTickets={fetchTickets}/>,
+    );
 
     expect(tree).toMatchSnapshot();
   });

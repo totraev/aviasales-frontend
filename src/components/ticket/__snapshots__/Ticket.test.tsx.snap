@@ -17,16 +17,9 @@ exports[`Ticket component Should renders correctly 1`] = `
           logo@3x.png
         "
     />
-    <button
-      className="btn"
-    >
-      Купить
-      <br />
-      за 
-      21300
-       ​
-      ₽
-    </button>
+    <Connect(BuyButton)
+      price={13100}
+    />
   </div>
   <div
     className="info"
@@ -39,25 +32,9 @@ exports[`Ticket component Should renders correctly 1`] = `
       >
         17:20
       </span>
-      <div
-        className="seporator"
-      >
-        <div
-          className="stops"
-        >
-          1 ПЕРЕСАДКА
-        </div>
-        <div
-          className="hr"
-        >
-          <div
-            className="line"
-          />
-          <span
-            className="airplane"
-          />
-        </div>
-      </div>
+      <Seporator
+        stops={1}
+      />
       <span
         className="time"
       >
@@ -88,12 +65,12 @@ exports[`Ticket component Should renders correctly 1`] = `
       <span
         className="date"
       >
-        12.05.18
+        5 дек. 2018, ср
       </span>
       <span
         className="date"
       >
-        12.05.18
+        5 дек. 2018, ср
       </span>
     </div>
   </div>

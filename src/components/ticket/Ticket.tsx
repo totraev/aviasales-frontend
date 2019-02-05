@@ -4,6 +4,8 @@ import styles from './Ticket.module.css';
 import BuyButton from '../../containers/buyButton/BuyButton';
 import Seporator from './Seporator';
 
+import { formatDate } from '../../helpers/date';
+
 import { ITicketProps } from './Ticket.types';
 
 const Ticket: SFC<ITicketProps> = ({ ticket }) => (
@@ -20,28 +22,28 @@ const Ticket: SFC<ITicketProps> = ({ ticket }) => (
         alt="TK"
       />
 
-      <BuyButton currency="rub" price={21300}/>
+      <BuyButton price={ticket.price}/>
     </div>
 
     <div className={styles.info}>
       <div className={styles.segment}>
-        <span className={styles.time}>{ticket.departureTime}</span>
-        <Seporator />
-        <span className={styles.time}>{ticket.arrivalTime}</span>
+        <span className={styles.time}>{ticket.departure_time}</span>
+        <Seporator stops={ticket.stops}/>
+        <span className={styles.time}>{ticket.arrival_time}</span>
       </div>
 
       <div className={styles.segment}>
         <span className={styles.origin}>
-          {ticket.origin}, {ticket.originName}
+          {ticket.origin}, {ticket.origin_name}
         </span>
         <span className={styles.destination}>
-          {ticket.destinationName}, {ticket.destination}
+          {ticket.destination_name}, {ticket.destination}
         </span>
       </div>
 
       <div className={styles.segment}>
-        <span className={styles.date}>{ticket.departureDate}</span>
-        <span className={styles.date}>{ticket.arrivalDate}</span>
+        <span className={styles.date}>{formatDate(ticket.departure_date)}</span>
+        <span className={styles.date}>{formatDate(ticket.arrival_date)}</span>
       </div>
     </div>
   </div>

@@ -1,31 +1,35 @@
 import React, { SFC } from 'react';
+import { connect } from 'react-redux';
 import styles from './TicketList.module.css';
 
+import Loader from '../../components/loader/Loader';
 import Ticket from '../../components/ticket/Ticket';
 
-const ticket = {
-  arrivalDate: '12.05.18',
-  arrivalTime: '23:50',
-  carrier: 'S7',
-  departureDate: '12.05.18',
-  departureTime: '17:20',
-  destination: 'TLV',
-  destinationName: 'Тель-Авив',
-  origin: 'VVO',
-  originName: 'Владивосток',
-  price: 13100,
-  stops: 1,
-};
+import { IState } from '../../redux/rootReducer';
+import { filteredTicketsSelector } from '../../redux/selectors/tickets';
 
-const TicketList: SFC = () => (
+import { IStateProps, ITicketListProps } from './TicketList.types';
+
+const TicketList: SFC<ITicketListProps> = ({ loading, tickets }) => (
   <div className={styles.list}>
-    <Ticket ticket={ticket}/>
-    <Ticket ticket={ticket}/>
-    <Ticket ticket={ticket}/>
-    <Ticket ticket={ticket}/>
-    <Ticket ticket={ticket}/>
-    <Ticket ticket={ticket}/>
+    {loading && <Loader />}
+
+    {!loading && tickets.map((ticket) => (
+      <Ticket
+        key={`${ticket.carrier}-${ticket.stops}-${ticket.price}`}
+        ticket={ticket}
+      />
+    ))}
+
+    {!loading && tickets.length === 0 && (
+      <div className={styles.empty}>НЕТ ПОДХОДЯЩИХ БИЛЕТОВ</div>
+    )}
   </div>
 );
 
-export default TicketList;
+export default connect<IStateProps, {}, {}, IState>(
+  (state) => ({
+    loading: state.tickets.loading,
+    tickets: filteredTicketsSelector(state),
+  }),
+)(TicketList);

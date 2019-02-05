@@ -12,7 +12,6 @@ exports[`Checkbox component Should renders correctly 1`] = `
       checked={true}
       className="checkbox"
       id="test"
-      onClick={null}
       type="checkbox"
     />
     <span

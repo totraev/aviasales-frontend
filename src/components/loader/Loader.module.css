@@ -1,0 +1,51 @@
+@keyframes lineScale {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.4); }
+  100% { transform: scaleY(1); }
+}
+
+.loader {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineWrap {
+  display: block;
+}
+
+.line {
+  display: inline-block;
+  background-color: #2196f3;
+  width: 5px;
+  height: 35px;
+  border-radius: 3px;
+  margin: 3px;
+  animation: lineScale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+}
+
+.line1 {
+  composes: line;
+  animation-delay: -0.4s;
+}
+
+.line2 {
+  composes: line;
+  animation-delay: -0.3s;
+}
+
+.line3 {
+  composes: line;
+  animation-delay: -0.2s;
+}
+
+.line4 {
+  composes: line;
+  animation-delay: -0.1s;
+}
+
+.line5 {
+  composes: line;
+  animation-delay: 0s;
+}

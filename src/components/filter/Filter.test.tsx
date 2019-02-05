@@ -1,11 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 import Filter from './Filter';
 
 describe('Filter components', () => {
   it('Should renders correctly', () => {
-    const tree = renderer.create(<Filter />).toJSON();
+    const renderer = createRenderer();
+    const tree = renderer.render(<Filter />);
 
     expect(tree).toMatchSnapshot();
   });

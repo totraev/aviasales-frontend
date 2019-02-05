@@ -1,6 +1,8 @@
 import React, { SFC } from 'react';
 import styles from './Checkbox.module.css';
 
+import classNames from 'classnames';
+
 import { stopsMessage } from '../../helpers/stops';
 import { ICheckboxProps } from './Checkbox.types';
 
@@ -8,7 +10,7 @@ const Checkbox: SFC<ICheckboxProps> = ({
   id,
   stops,
   value,
-  onClick,
+  onChange,
   onUncheckOther,
 }) => (
   <div className={styles.wrap}>
@@ -18,21 +20,28 @@ const Checkbox: SFC<ICheckboxProps> = ({
         className={styles.checkbox}
         type="checkbox"
         checked={value}
-        onClick={onClick}
+        onChange={onChange}
       />
-      <span className={styles.faceChecked}/>
+      <span
+        className={classNames({
+          [styles.face]: !value,
+          [styles.faceChecked]: value,
+        })}
+      />
 
       {stopsMessage(stops)}
     </label>
 
-    <div className={styles.append}>
-      <button
-        className={styles.uncheckOther}
-        onClick={onUncheckOther}
-      >
-        ТОЛЬКО
-      </button>
-    </div>
+    {onUncheckOther !== undefined && (
+      <div className={styles.append}>
+        <button
+          className={styles.uncheckOther}
+          onClick={onUncheckOther}
+        >
+          ТОЛЬКО
+        </button>
+      </div>
+    )}
   </div>
 );
 

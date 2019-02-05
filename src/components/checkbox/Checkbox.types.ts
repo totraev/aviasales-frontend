@@ -1,9 +1,9 @@
-import { MouseEventHandler } from 'react';
+import { FormEventHandler, MouseEventHandler } from 'react';
 
 export interface ICheckboxProps {
   id: string;
   stops: number;
   value: boolean;
-  onClick: MouseEventHandler<HTMLInputElement>;
-  onUncheckOther: MouseEventHandler<HTMLButtonElement>;
+  onChange: FormEventHandler<HTMLInputElement>;
+  onUncheckOther?: MouseEventHandler<HTMLButtonElement>;
 }

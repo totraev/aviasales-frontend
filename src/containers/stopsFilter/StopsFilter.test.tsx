@@ -1,18 +1,24 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 import { StopsFilter } from './StopsFilter';
 
 describe('StopsFilter component', () => {
   it('Should renders correctly', () => {
+    const renderer = createRenderer();
     const mockFunc: any = () => null;
-    const tree = renderer.create(
+
+    const tree = renderer.render(
       <StopsFilter
         stopsList={[true, false, false, true]}
-        handleClick={mockFunc}
+        handleChange={mockFunc}
         handleUncheckOther={mockFunc}
+        handleChangeAll={null}
+        toggleAllCheckboxes={null}
+        toggleCurrentCheckbox={null}
+        toggleOnlyCurrentCheckbox={null}
       />,
-    ).toJSON();
+    );
 
     expect(tree).toMatchSnapshot();
   });

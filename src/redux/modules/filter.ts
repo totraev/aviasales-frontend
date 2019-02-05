@@ -21,7 +21,7 @@ export interface ICurrencyMap {
   rub: number;
   usd: number;
 }
-export type ICurrency = keyof ICurrencyMap;
+export type Currency = keyof ICurrencyMap;
 export type ITransfers = [boolean, boolean, boolean, boolean];
 export interface ICheckboxPayload {
   index: number;
@@ -29,7 +29,7 @@ export interface ICheckboxPayload {
 }
 
 export type SetCurrenciesAction = IAction<typeof SET_CURRENCIES, ICurrencyMap>;
-export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, ICurrency>;
+export type SelectCurrencyAction = IAction<typeof SELECT_CURRENCY, Currency>;
 export type ToggleAllTransfersAction = IAction<typeof TOGGLE_ALL_TRANSFERS, boolean>;
 export type ToggleCurrentTransferAction = IAction<typeof TOGGLE_CURRENT_TRANSFER, ICheckboxPayload>;
 export type ToggleOnlyTransferAction = IAction<typeof TOGGLE_ONLY_CURRENT_TRANSFER, ICheckboxPayload>;
@@ -41,7 +41,7 @@ export type FilterAction = SetCurrenciesAction
 
 export interface IFilterState {
   currencyMap: ICurrencyMap;
-  currentCurr: ICurrency;
+  currentCurr: Currency;
   transfers: ITransfers;
 }
 
@@ -55,21 +55,21 @@ export function setCurrencies(payload: ICurrencyMap): SetCurrenciesAction {
   };
 }
 
-export function selectCurrency(payload: ICurrency): SelectCurrencyAction {
+export function selectCurrency(payload: Currency): SelectCurrencyAction {
   return {
     payload,
     type: SELECT_CURRENCY,
   };
 }
 
-export function toggleAllTransfers(payload: boolean): ToggleAllTransfersAction {
+export function toggleAllCheckboxes(payload: boolean): ToggleAllTransfersAction {
   return {
     payload,
     type: TOGGLE_ALL_TRANSFERS,
   };
 }
 
-export function toggleCurrentTransfer(stops: number, value: boolean): ToggleCurrentTransferAction {
+export function toggleCurrentCheckbox(stops: number, value: boolean): ToggleCurrentTransferAction {
   return {
     payload: {
       index: stops,
@@ -79,7 +79,7 @@ export function toggleCurrentTransfer(stops: number, value: boolean): ToggleCurr
   };
 }
 
-export function toggleOnlyCurrentTransfer(stops: number, value: boolean): ToggleOnlyTransferAction {
+export function toggleOnlyCurrentCheckbox(stops: number, value: boolean): ToggleOnlyTransferAction {
   return {
     payload: {
       index: stops,
@@ -99,7 +99,7 @@ export const initialState: IFilterState = {
     usd: 1,
   },
   currentCurr: 'rub',
-  transfers: [false, false, false, false],
+  transfers: [true, true, true, true],
 };
 
 export default createReducer<IFilterState, FilterAction>(initialState, {

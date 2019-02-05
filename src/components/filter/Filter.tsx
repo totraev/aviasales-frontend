@@ -7,14 +7,10 @@ import StopsFilter from '../../containers/stopsFilter/StopsFilter';
 const Filter: SFC = () => (
   <div className={styles.filter}>
     <h3 className={styles.title}>ВАЛЮТА</h3>
-    <CurrencyToggle
-      currency="usd"
-      onChange={null}
-    />
+    <CurrencyToggle/>
 
     <h3 className={styles.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</h3>
-
-    <StopsFilter stopsList={[true, true, true, true]}/>
+    <StopsFilter />
   </div>
 );
 

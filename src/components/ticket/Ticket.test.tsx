@@ -1,24 +1,25 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { createRenderer } from 'react-test-renderer/shallow';
 
 import Ticket from './Ticket';
 
 describe('Ticket component', () => {
   it('Should renders correctly', () => {
     const ticket = {
-      arrivalDate: '12.05.18',
-      arrivalTime: '23:50',
+      arrival_date: '12.05.18',
+      arrival_time: '23:50',
       carrier: 'S7',
-      departureDate: '12.05.18',
-      departureTime: '17:20',
+      departure_date: '12.05.18',
+      departure_time: '17:20',
       destination: 'TLV',
-      destinationName: 'Тель-Авив',
+      destination_name: 'Тель-Авив',
       origin: 'VVO',
-      originName: 'Владивосток',
+      origin_name: 'Владивосток',
       price: 13100,
       stops: 1,
     };
-    const tree = renderer.create(<Ticket ticket={ticket}/>).toJSON();
+    const renderer = createRenderer();
+    const tree = renderer.render(<Ticket ticket={ticket}/>);
 
     expect(tree).toMatchSnapshot();
   });

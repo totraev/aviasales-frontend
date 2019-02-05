@@ -8,5 +8,5 @@ const messages = [
 export function stopsMessage(value: number): string {
   return messages[value] !== undefined
     ? messages[value]
-    : messages[0];
+    : 'ВСЕ';
 }
