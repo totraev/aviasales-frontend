@@ -1,4 +1,4 @@
-import { FormEventHandler, MouseEventHandler } from 'react';
+import { FormEventHandler, MouseEventHandler } from "react";
 
 export interface ICheckboxProps {
   id: string;

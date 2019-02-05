@@ -1,10 +1,10 @@
-import { MouseEventHandler } from 'react';
-import { ActionCreator } from 'redux';
+import { MouseEventHandler } from "react";
+import { ActionCreator } from "redux";
 import {
   ToggleAllTransfersAction,
   ToggleCurrentTransferAction,
-  ToggleOnlyTransferAction,
-} from '../../redux/modules/filter';
+  ToggleOnlyTransferAction
+} from "../../redux/modules/filter";
 
 export interface IStateProps {
   stopsList: [boolean, boolean, boolean, boolean];

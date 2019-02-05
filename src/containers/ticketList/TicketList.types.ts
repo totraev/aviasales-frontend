@@ -1,4 +1,4 @@
-import { ITicket } from '../../redux/modules/tickets';
+import { ITicket } from "../../redux/modules/tickets";
 
 export interface IStateProps {
   loading: boolean;

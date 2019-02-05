@@ -1,4 +1,4 @@
-import { Currency } from '../../redux/modules/filter';
+import { Currency } from "../../redux/modules/filter";
 
 export interface IStateProps {
   currency: Currency;

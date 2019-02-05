@@ -1,7 +1,13 @@
 @keyframes lineScale {
-  0% { transform: scaleY(1); }
-  50% { transform: scaleY(0.4); }
-  100% { transform: scaleY(1); }
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 .loader {

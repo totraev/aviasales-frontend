@@ -1,17 +1,17 @@
-import React, { SFC } from 'react';
-import styles from './Checkbox.module.css';
+import React, { SFC } from "react";
+import styles from "./Checkbox.module.css";
 
-import classNames from 'classnames';
+import classNames from "classnames";
 
-import { stopsMessage } from '../../helpers/stops';
-import { ICheckboxProps } from './Checkbox.types';
+import { stopsMessage } from "../../helpers/stops";
+import { ICheckboxProps } from "./Checkbox.types";
 
 const Checkbox: SFC<ICheckboxProps> = ({
   id,
   stops,
   value,
   onChange,
-  onUncheckOther,
+  onUncheckOther
 }) => (
   <div className={styles.wrap}>
     <label className={styles.label} htmlFor={id}>
@@ -25,7 +25,7 @@ const Checkbox: SFC<ICheckboxProps> = ({
       <span
         className={classNames({
           [styles.face]: !value,
-          [styles.faceChecked]: value,
+          [styles.faceChecked]: value
         })}
       />
 
@@ -34,10 +34,7 @@ const Checkbox: SFC<ICheckboxProps> = ({
 
     {onUncheckOther !== undefined && (
       <div className={styles.append}>
-        <button
-          className={styles.uncheckOther}
-          onClick={onUncheckOther}
-        >
+        <button className={styles.uncheckOther} onClick={onUncheckOther}>
           ТОЛЬКО
         </button>
       </div>

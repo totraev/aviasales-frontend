@@ -1,10 +1,10 @@
-import { AnyAction, applyMiddleware, createStore, Store } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import createImmutableStateMiddleware from 'redux-immutable-state-invariant';
-import loggerMiddleware from 'redux-logger';
-import createSagaMiddleware, { END, Saga, Task } from 'redux-saga';
+import { AnyAction, applyMiddleware, createStore, Store } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import createImmutableStateMiddleware from "redux-immutable-state-invariant";
+import loggerMiddleware from "redux-logger";
+import createSagaMiddleware, { END, Saga, Task } from "redux-saga";
 
-import rootReducer, { IState } from '../rootReducer';
+import rootReducer, { IState } from "../rootReducer";
 
 export interface IExt {
   runSaga?: (rootSaga: Saga) => Task;
@@ -23,14 +23,14 @@ function configureDevStore(initialState: IState): IStore {
       applyMiddleware(
         sagaMiddleware,
         loggerMiddleware,
-        createImmutableStateMiddleware(),
-      ),
-    ),
+        createImmutableStateMiddleware()
+      )
+    )
   );
 
   if (module.hot) {
-    module.hot.accept('../rootReducer', () => {
-      const nextRootReducer = require('../rootReducer').default;
+    module.hot.accept("../rootReducer", () => {
+      const nextRootReducer = require("../rootReducer").default;
       store.replaceReducer(nextRootReducer);
     });
   }

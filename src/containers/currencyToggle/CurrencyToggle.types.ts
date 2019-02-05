@@ -1,7 +1,7 @@
-import { MouseEventHandler } from 'react';
-import { selectCurrency } from '../../redux/modules/filter';
+import { MouseEventHandler } from "react";
+import { selectCurrency } from "../../redux/modules/filter";
 
-export type Currency = 'eur' | 'rub' | 'usd';
+export type Currency = "eur" | "rub" | "usd";
 
 export interface IStateProps {
   currency: Currency;

@@ -1,7 +1,7 @@
-import { AnyAction, applyMiddleware, createStore, Store } from 'redux';
-import createSagaMiddleware, { END, Saga, Task } from 'redux-saga';
+import { AnyAction, applyMiddleware, createStore, Store } from "redux";
+import createSagaMiddleware, { END, Saga, Task } from "redux-saga";
 
-import rootReducer, { IState } from '../rootReducer';
+import rootReducer, { IState } from "../rootReducer";
 
 export interface IExt {
   runSaga?: (rootSaga: Saga) => Task;
@@ -16,7 +16,7 @@ function configureProdStore(initialState: any): IStore {
   const store = createStore<IState, AnyAction, IExt, {}>(
     rootReducer,
     initialState,
-    applyMiddleware(sagaMiddleware),
+    applyMiddleware(sagaMiddleware)
   );
 
   store.runSaga = sagaMiddleware.run;
