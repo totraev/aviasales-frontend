@@ -1,8 +1,10 @@
 # Aviasales test app
-=========================
+
 ## Install
 
 ```git clone git@github.com:totraev/aviasales-frontend.git```
+
+```cd aviasales-frontend```
 
 ```yarn install```
 
