@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyToggle component Should renders correctly 1`] = `
+<div
+  className="toggle"
+>
+  <button
+    className={null}
+    onClick={null}
+  >
+    RUB
+  </button>
+  <button
+    className={null}
+    onClick={null}
+  >
+    USD
+  </button>
+  <button
+    className={null}
+    onClick={null}
+  >
+    EUR
+  </button>
+</div>
+`;

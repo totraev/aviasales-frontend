@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Seporator component Should renders correctly 1`] = `
+<div
+  className="seporator"
+>
+  <div
+    className="stops"
+  >
+    1 ПЕРЕСАДКА
+  </div>
+  <div
+    className="hr"
+  >
+    <div
+      className="line"
+    />
+    <span
+      className="airplane"
+    />
+  </div>
+</div>
+`;

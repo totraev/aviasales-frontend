@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket component Should renders correctly 1`] = `
+<div
+  className="ticket"
+>
+  <div
+    className="carrier"
+  >
+    <img
+      alt="TK"
+      className="logo"
+      src="logo@3x.png"
+      srcSet="
+          logo.png,
+          logo@2x.png 2x,
+          logo@3x.png
+        "
+    />
+    <button
+      className="btn"
+    >
+      Купить
+      <br />
+      за 
+      21300
+       ​
+      ₽
+    </button>
+  </div>
+  <div
+    className="info"
+  >
+    <div
+      className="segment"
+    >
+      <span
+        className="time"
+      >
+        17:20
+      </span>
+      <div
+        className="seporator"
+      >
+        <div
+          className="stops"
+        >
+          1 ПЕРЕСАДКА
+        </div>
+        <div
+          className="hr"
+        >
+          <div
+            className="line"
+          />
+          <span
+            className="airplane"
+          />
+        </div>
+      </div>
+      <span
+        className="time"
+      >
+        23:50
+      </span>
+    </div>
+    <div
+      className="segment"
+    >
+      <span
+        className="origin"
+      >
+        VVO
+        , 
+        Владивосток
+      </span>
+      <span
+        className="destination"
+      >
+        Тель-Авив
+        , 
+        TLV
+      </span>
+    </div>
+    <div
+      className="segment"
+    >
+      <span
+        className="date"
+      >
+        12.05.18
+      </span>
+      <span
+        className="date"
+      >
+        12.05.18
+      </span>
+    </div>
+  </div>
+</div>
+`;

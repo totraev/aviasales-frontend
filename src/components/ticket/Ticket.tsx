@@ -4,7 +4,9 @@ import styles from './Ticket.module.css';
 import BuyButton from '../../containers/buyButton/BuyButton';
 import Seporator from './Seporator';
 
-const Ticket: SFC = () => (
+import { ITicketProps } from './Ticket.types';
+
+const Ticket: SFC<ITicketProps> = ({ ticket }) => (
   <div className={styles.ticket}>
     <div className={styles.carrier}>
       <img
@@ -18,24 +20,28 @@ const Ticket: SFC = () => (
         alt="TK"
       />
 
-      <BuyButton />
+      <BuyButton currency="rub" price={21300}/>
     </div>
 
     <div className={styles.info}>
       <div className={styles.segment}>
-        <span className={styles.time}>09:25</span>
+        <span className={styles.time}>{ticket.departureTime}</span>
         <Seporator />
-        <span className={styles.time}>11:45</span>
+        <span className={styles.time}>{ticket.arrivalTime}</span>
       </div>
 
       <div className={styles.segment}>
-        <span className={styles.origin}>VVO, Владивосток</span>
-        <span className={styles.destination}>Тель-Авив, TLV</span>
+        <span className={styles.origin}>
+          {ticket.origin}, {ticket.originName}
+        </span>
+        <span className={styles.destination}>
+          {ticket.destinationName}, {ticket.destination}
+        </span>
       </div>
 
       <div className={styles.segment}>
-        <span className={styles.date}>9 окт 2018, Пт</span>
-        <span className={styles.date}>10 окт 2018, Пт</span>
+        <span className={styles.date}>{ticket.departureDate}</span>
+        <span className={styles.date}>{ticket.arrivalDate}</span>
       </div>
     </div>
   </div>

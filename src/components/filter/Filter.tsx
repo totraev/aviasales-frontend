@@ -1,17 +1,20 @@
 import React, { SFC } from 'react';
 import styles from './Filter.module.css';
 
-import CurrencyToggle from '../../components/currencyToggle/CurrencyToggle';
-import StopsFilter from '../../components/stopsFilter/StopsFilter';
+import CurrencyToggle from '../../containers/currencyToggle/CurrencyToggle';
+import StopsFilter from '../../containers/stopsFilter/StopsFilter';
 
 const Filter: SFC = () => (
   <div className={styles.filter}>
     <h3 className={styles.title}>ВАЛЮТА</h3>
-    <CurrencyToggle/>
+    <CurrencyToggle
+      currency="usd"
+      onChange={null}
+    />
 
     <h3 className={styles.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</h3>
 
-    <StopsFilter />
+    <StopsFilter stopsList={[true, true, true, true]}/>
   </div>
 );
 

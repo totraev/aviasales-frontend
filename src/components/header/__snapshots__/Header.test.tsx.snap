@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Should renders correctly 1`] = `
+<div
+  className="header"
+>
+  <img
+    alt="Aviasales"
+    src={
+      Object {
+        "ReactComponent": [Function],
+        "__esModule": true,
+        "default": "logo.svg",
+      }
+    }
+  />
+</div>
+`;
