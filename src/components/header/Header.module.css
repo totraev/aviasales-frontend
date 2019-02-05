@@ -8,12 +8,12 @@
 
 @media (--tablet) {
   .header {
-    margin: 35px 0;
+    margin: 35px 0 30px;
   }
 }
 
 @media (--laptop) {
   .header {
-    margin: 50px 0;
+    margin: 40px 0 32px;
   }
 }

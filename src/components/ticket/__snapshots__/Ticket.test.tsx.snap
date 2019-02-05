@@ -65,12 +65,12 @@ exports[`Ticket component Should renders correctly 1`] = `
       <span
         className="date"
       >
-        12 Июн 2018, Вт
+        12 июн 2018, Вт
       </span>
       <span
         className="date"
       >
-        12 Июн 2018, Вт
+        12 июн 2018, Вт
       </span>
     </div>
   </div>
