@@ -6,9 +6,11 @@ exports[`BuyButton component Should renders correctly 1`] = `
 >
   Купить
   <br />
-  за 
-  500
-   ​
-  ₽
+  за  
+  <span
+    className="rub"
+  >
+    500
+  </span>
 </button>
 `;

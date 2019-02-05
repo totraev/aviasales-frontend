@@ -21,3 +21,35 @@
     box-shadow: inset 0 1px 0 0 #ed7a18;
   }
 }
+
+.price {
+  &::before,
+  &::after {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+  }
+}
+
+.usd {
+  composes: price;
+
+  &::before {
+    content: '$';
+  }
+}
+
+.eur {
+  composes: price;
+
+  &::before {
+    content: '€';
+  }
+}
+
+.rub {
+  composes: price;
+
+  &::after {
+    content: '₽';
+  }
+}
