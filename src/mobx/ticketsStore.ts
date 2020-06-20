@@ -1,4 +1,6 @@
-import { observable, action } from 'mobx'
+import { observable, action, computed } from 'mobx'
+
+import { FilterStore } from './filterStore'
 
 export interface ITicket {
   origin: string
@@ -14,9 +16,19 @@ export interface ITicket {
   price: number
 }
 
-class TicketsStore {
+export class TicketsStore {
   @observable public loading = true
   @observable public tickets: ITicket[] = []
+
+  constructor(private filterStore: FilterStore) {}
+
+  @computed private get sortedTickets() {
+    return this.tickets.slice().sort((a, b) => a.price - b.price)
+  }
+
+  @computed get filteredTickets() {
+    return this.sortedTickets.filter(ticket => this.filterStore.transfers[ticket.stops])
+  }
 
   @action fetchTickets() {}
 

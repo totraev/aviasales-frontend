@@ -6,7 +6,7 @@ export interface ICurrencyMap {
   usd: number
 }
 
-class FilterStore {
+export class FilterStore {
   @observable public currencyMap = new Map<string, number>()
   @observable public currentCurr = 'rub'
   @observable public transfers = [true, true, true, true]
